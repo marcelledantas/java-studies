@@ -70,7 +70,7 @@ public class Main {
                 System.out.println("Prime number found: " + i);
                 count ++;
                 if(count == 15){
-                    System.out.println("Exiting the loop");
+                    System.out.println("Exiting the loop some");
                     break;
                 }
             }
