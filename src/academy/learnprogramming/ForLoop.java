@@ -80,4 +80,25 @@ public class ForLoop {
         return sumDigits;
     }
 
+    public static boolean isPalindrome (int number){
+        int reverse = 0;
+        int lastDigit = 0;
+
+        if(number < 0){
+            number *= -1;
+        }
+        int originalNumber = number;
+
+        while(number > 0){
+            lastDigit = number % 10; //Extract the last digit
+            reverse *= 10;
+            reverse += lastDigit;
+            number /= 10; //Update number
+        }
+        if(reverse == originalNumber){
+            return true;
+        }
+        return false;
+    }
+
 }

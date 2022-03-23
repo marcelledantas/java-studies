@@ -83,6 +83,7 @@ public class Main {
 
         System.out.println(ForLoop.sumDigits(- 1255));
 
+        System.out.println(ForLoop.isPalindrome(-1221));
 
 
     }
