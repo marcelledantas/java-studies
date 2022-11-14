@@ -43,10 +43,14 @@ public class Demo {
     }
 
     private static boolean addInOrder(LinkedList<String> linkedList, String newCity){
-        ListIterator<String> stringListIterator = linkedList.listIterator();
+        ListIterator<String> stringListIterator = linkedList.listIterator(); // the listIterator is a special type that allow to back to a list - this is not possible when using the regular iterator
+
+        //Disclaimer: it is not a good practice to modify the entries of a method
+        //In this case, the LinkedList linkedList entry is being modified
+
 
         while(stringListIterator.hasNext()){
-            int comparison = stringListIterator.next().compareTo(newCity);
+            int comparison = stringListIterator.next().compareTo(newCity); //.next() automatically return the instance and moves the pointer to the next destination
             if(comparison == 0){
                 //equal, do not add
                 System.out.println(newCity + " is already included as a destination");
@@ -70,11 +74,11 @@ public class Demo {
     private static void visit(LinkedList cities){
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
-        boolean goingForward = true;
+        boolean goingForward = true; //keeping tracking of the direction
         ListIterator<String> listIterator = cities.listIterator();
 
         if(cities.isEmpty()){
-            System.out.println("No cities in the itenerary");
+            System.out.println("No cities in the itinerary");
         } else{
             System.out.println("Now visiting " + listIterator.next());
             printMenu();
