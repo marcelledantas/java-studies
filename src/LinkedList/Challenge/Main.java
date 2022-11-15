@@ -56,6 +56,7 @@ public class Main {
         } else{
             System.out.println("Now playing");
             System.out.println(playListIterator.next().toString());
+            printMenu();
         }
 
         while(!quit){
@@ -100,15 +101,63 @@ public class Main {
                     break;
 
                 case 3:
+                    if(forward){
+                        if(playListIterator.hasPrevious()){
+                            System.out.println(playListIterator.previous().toString());
+                        } else{
+                            System.out.println("We are at the start of the list");
+                        }
+                        forward = false;
+                    } else{
+                        if(playListIterator.hasNext()){
+                            System.out.println(playListIterator.next().toString());
+                        } else{
+                            System.out.println("We are at the end of the list");
+                        }
+                        forward = true;
+                    }
                     break;
 
                 case 4:
-//                    printList(playList);
-
-                case 5:
-//                    printMenu();
+                    printList(playList);
                     break;
+                case 5:
+                    printMenu();
+                    break;
+
+                case 6:
+                    if(playList.size() > 0){
+                        playListIterator.remove();
+                        if(playListIterator.hasNext()){
+                            System.out.printf("Now playing " + playListIterator.next().toString());
+                        } else if(playListIterator.hasPrevious()){
+                            System.out.printf("Now playing" + playListIterator.previous().toString());
+                        }
+                    }
             }
+        }
+    }
+
+    public static void printMenu(){
+        System.out.println("Available actions:\npress");
+        System.out.println("0 - to quit\n" +
+                "1 - to play next song\n"+
+                "2 - to play previous song\n"+
+                "3 - to replay the current song\n" +
+                "4 - list songs in the playlist\n" +
+                "5 - print available actions" +
+                "6 - delete current from the playlist"
+        );
+    }
+
+    public static void printList(LinkedList<Song> playList){
+
+        ListIterator<Song> listIterator = playList.listIterator();
+        System.out.println("Printing the full playlist");
+        int i = 0;
+        while(listIterator.hasNext()){
+            System.out.println((i + 1) + " - " +listIterator.next().toString());
+            i++;
         }
     }
 }
