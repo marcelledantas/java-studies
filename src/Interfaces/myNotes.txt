@@ -1,0 +1,20 @@
+
+Should you create a class and extend from that, in other words inherit from that class or should you use an interface?
+In the example Telephone, we could have had that class and extended it to create a desk phone or mobile phone or both of them.
+But, in this particular case, ir probably wouldn't have been a good approach.
+On way to decide that generally, is to consider the relationship of the final class to the object that it's extending or implementing.
+With the telephone example, both classes have a telephone so the desk-phone does not have anything else.
+Its more accurate to say that mobile phone is actually a computer that has a phone interface. A desk-phone can telephone and a mobile
+can telephone, which indicates that they should both implement a phone interface rather than extending a phone class.
+
+In java, a class can only inherit from one super class. But, we can actually implement for many interfaces
+
+Another example, the animal class. Not all animals can walk, so we can create a walk interface. Also, not all the animals can fly, so
+we can create a fly interface.
+
+In the dog class, we can extend the animal class and implement the interface walk.
+In the bird class, we can extend the animal class and implement the fly interface.
+
+List is a generic type. It is a good practice do something like
+List<Song> playList = new ArrayList<>(); set to a specific type like new Vector(), new LinkedList()
+The generic type List supports all the linkedList methods, because it has these methods in its interface.
