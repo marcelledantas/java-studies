@@ -18,3 +18,18 @@ In the bird class, we can extend the animal class and implement the fly interfac
 List is a generic type. It is a good practice do something like
 List<Song> playList = new ArrayList<>(); set to a specific type like new Vector(), new LinkedList()
 The generic type List supports all the linkedList methods, because it has these methods in its interface.
+
+How to decide when to declare an instance as class (like Player) or using as an Interface:
+        1. ISaveable werewolf = new Monster("Werewolf",20,40);
+
+        2. Monster monster = new Monster("MosterHigh",30,78);
+           monster.getStrength();
+
+Generally, depends on what you wanna to do with the instance. If we want to declare a variable that can hold variables of different types
+then it would have to be the type of the common interface.
+But if you want to access methods that exist in the class like we wanted to do with (2), then the object has to be declared with the class. Unless
+you can use CAST (ClassName) object, then use the methods of the ClassName.
+
+
+
+

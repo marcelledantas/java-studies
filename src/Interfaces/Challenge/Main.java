@@ -18,8 +18,27 @@ public class Main {
         loadObject(player);
         System.out.println(player);
 
-        //        loadObject(player);
-//        saveObject(player);
+        Monster monster = new Monster("MosterHigh",30,78);
+        System.out.println(monster.toString());
+        saveObject(monster);
+//        loadObject(monster);
+        System.out.println(monster);
+
+        //Implementing a new monster class but using an interface
+        //Only can use the methods from the interface
+        //Example cannot use: werewolf.getStrength()
+        ISaveable werewolf = new Monster("Werewolf",20,40);
+
+
+
+
+        //But we CAN cast ( (Monster) werewolf), and use the methods from the monster class
+        System.out.println( ( (Monster) werewolf).getStrength() );
+
+
+
+        //loadObject(player);
+        //saveObject(player);
     }
 
     public static ArrayList<String> readValues(){
