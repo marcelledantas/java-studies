@@ -1,5 +1,3 @@
-package com.example.demo.student;
-
 import com.example.demo.BankAccount;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;

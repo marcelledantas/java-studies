@@ -1,6 +1,3 @@
-package com.example.demo;
-
-
 public class CalculateMethods {
 
     public double divide(int x, int y){

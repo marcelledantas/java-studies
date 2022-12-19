@@ -1,5 +1,7 @@
-package com.example.demo.student;
-
+import com.example.demo.student.Gender;
+import com.example.demo.student.Student;
+import com.example.demo.student.StudentRepository;
+import com.example.demo.student.StudentService;
 import com.example.demo.student.exception.BadRequestException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
