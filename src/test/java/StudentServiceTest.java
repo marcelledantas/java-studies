@@ -1,8 +1,8 @@
-import com.example.demo.student.Gender;
-import com.example.demo.student.Student;
-import com.example.demo.student.StudentRepository;
-import com.example.demo.student.StudentService;
-import com.example.demo.student.exception.BadRequestException;
+import student.Gender;
+import student.Student;
+import student.StudentRepository;
+import student.StudentService;
+import student.exception.BadRequestException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
