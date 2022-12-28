@@ -8,7 +8,32 @@ However, if it does not, then the subclass must also be declared abstract.
 Use an Abstract class when:
 You want to share code among several closely related classes (Animal - with fields name, age...)
 You expect classes that extend your abstract class to have many common methods or field or required access modifiers other than public (protected, private).
-You want to declare non static or non
+You want to declare non static or non final static (for example name, age), this enables you to define methods that can access and modify the state of and object (getName, setName).
+When you have a requirement for your base class to provide a default implementation of certain methods but other methods should be open to being overridden by child classes.
+
+Summary: the purpose of an abstract class is to provide a common definition of a base class that multiple derived classes can share.
+
+Interface:
+An interface is juts the declaration of methods of a class, it's not the implementation.
+In an interface, we define what kind of operation an object can perform. These operations are defined by the classes that implement the interface.
+Interfaces form a contract between the class and the outside world, and this contract is enforced at build time by the compiler.
+You cannot instantiate them, and they may contain a mix of methods declared with or without implementation. All methods in interfaces are automatically public and abstract.
+An interface can extend other interface.
+Interfaces are more flexible and can deal with a lot more stress on the design of your program than the implementation.
+By introducing interfaces into your program, you are really introduce points of variation at which you can plug in different implementations for that interface. An interfaces primary purpose is abstraction, decoupling the "what" from "how".
+You expect that unrelated classes will implement your interface. For example, the interfaces Comparable and Clonable are implemented by many unrelated classes.
+You want to specify the behavior of a particular data type, but you are not concerned about who implements its behavior.
+You want to separate different behavior.
+The Collections API is an excellent example we have the List interface and implementations ArrayList and LinkedList (and more).
+The JDBC API is another excellent example. It exists of almost only interfaces, The concrete implementations are provides as "JDBC Drivers". This enables you to write all the JDBC code independent of the database (DB) vendor.
+
+
+
+
+
+
+
+
 
 
 
