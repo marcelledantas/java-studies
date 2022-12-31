@@ -1,0 +1,11 @@
+My notes from Practical Test-Driven Development for Java Programmers - LinkedIn Course
+
+1 - Test the expected outcome of an example.
+"I expected this particularly example to result in the following outcome"
+2 - Don't pre-judge design...let your tests drive it
+3 - Write the minimum code required to get your tests to pass
+4 - Each test should validate one single piece of logic
+
+TDD Concepts:
+IMPORTANT: Write the minimum of code possible to make the test (that previously failed) pass.
+
