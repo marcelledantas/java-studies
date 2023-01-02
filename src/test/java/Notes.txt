@@ -9,3 +9,48 @@ My notes from Practical Test-Driven Development for Java Programmers - LinkedIn 
 TDD Concepts:
 IMPORTANT: Write the minimum of code possible to make the test (that previously failed) pass.
 
+Rules of testing:
+1 - Test one item of functionality only
+2 - Test business logic, not methods -  not write test to check if the methods work, but write test to check that the business logic is correct.
+3 - Test must be repeatable and consistent - check if the existing tests are not broken. Given the same data the test should produce the same result every single time.
+Example:
+@Test
+public void notReliableTest(){
+    Date today = new date();
+    Bookstore store = new BookStore();
+    assertTrue(store.isOpen());
+}
+
+The example above is not a good test. Depending on the period of day the test would fail or pass. The test must have the same results for every time we run it.
+A better version of this test would be using a fixing data time as a parameter, in this case te test is reliable and repeatable.
+@Test
+public void reliableTest(){
+    Date today = new GregorianCalendar(2017,4,6,13,9,7).getTime();
+    Bookstore store = new BookStore();
+    assertTrue(store.isOpen());
+}
+
+4 - Test must be thorough. There is no point to test only some of the conditions that could occur. For example, with the ISBN we tested the 9 cases:
+1. Valid 10 digit ISBNs, made up of numbers only.
+2. Valid 10 digit ISBNs that end with X.
+3. Invalid 10 digit ISBNs, made up of numbers only;
+4. Invalid 10 digit ISBNs, that end in an X.
+5. Invalid 10 digit ISBNs that aren't numeric.
+6. Valid 13 digit ISBNs.
+7. Invalid 13 digit ISBNs.
+8. Invalid 13 digit ISBNs that aren't numeric.
+9. Invalid 13 digit ISBNs that aren't 10 or 13 digits.
+
+What tests should I write? Think about this four questions give us the full range of thing that we need to write our tests to make sure that we are covering the business logic.
+
+- What should the logic be?
+What are the cases when things should work. In the example, use a 13 or 10 valid ISBN.
+- What is the opposite to that logic?
+When it should fail. In the example, use a wrong 13 or 10 ISBN.
+- Are there any edges cases?
+In the example it occurs when the ISBN ends with a 'X'. Versions when work and don't work.
+- Are there any error conditions?
+In the example, non-numeric ISBN or ISBN that have the wrong length.
+
+
+
