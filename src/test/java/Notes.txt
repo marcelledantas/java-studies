@@ -52,5 +52,22 @@ In the example it occurs when the ISBN ends with a 'X'. Versions when work and d
 - Are there any error conditions?
 In the example, non-numeric ISBN or ISBN that have the wrong length.
 
+JUnit Asserts
+@Test
+public void valueIsNotNull(){
+    NySystem mySystem = new MySystem();
+    String value = mySystem.getValue();
+    assertNotNull(value);
+}
+
+@Test
+public void isValidEmailAddress(){
+    NySystem mySystem = new MySystem();
+    String email = mySystem.getEmail();
+    assertThat(email, StringConstains.constainsString("@")); // Best way: assertTrue(email.indexOf("@") > -1)
+}
+
+
+
 
 
