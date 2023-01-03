@@ -12,6 +12,19 @@ Or did a method that we expected would not run, not run?
 In this case, we are testing code flow, not just if we get the right values out.
 
 
+Using a Mock we get to found out whether a method was called.
+
+Mockito methods:
+
+//mock(): just create a dummy instance for MyClass, with a default implementation for all of its methods
+MyClass myClass = mock(MyClass.class);
+
+//when(): to create an actual implementation for any of the methods, when a particular method is called with a particularly set of parameters, this is what you should return:
+when(myClass.myMethod(params)).thenReturn(return-value));
+
+//verify(): equivalent of assert to see if this method was called would be the verify method. In this case, we don't care what the params was, we want to know how many times this method was called.
+// ? is a integer. If it is 1, it means that we are gonna see how many times this method was called with this params.
+Verify(myClass, time(?)).myMethod(params);
 
 
 
