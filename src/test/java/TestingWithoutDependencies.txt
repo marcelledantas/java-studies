@@ -1,0 +1,13 @@
+How to test something where our code has a dependency on some kind of external system (it might a database, a webService).
+
+New Business Logic
+Stock locator method returns:
+    A unique internal "locator code" for the book made up of:
+        last 4 digits of ISBN,
+        first initial of surname, and
+        number of words in the title
+
+    EG: 7396j4 - 7396 last 4 digits; J author; 4 number of words in the title.
+
+A 3rd party webservice can supply the name and author
+Cache all found names and authors in a local database for performance and reliability
