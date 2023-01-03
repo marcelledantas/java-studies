@@ -1,0 +1,42 @@
+
+Database: public Book lookup(String isbn)
+
+WebService: public Book lookup(String isbn)
+
+First, call the method that connects to the db, if that does not return anything, then call the method that connects to the webService.
+Goal: to test which one of this method did or did not get called.
+Finding out if a method is called or not is known as testing behavior.
+Did our code behave the way that we expected?
+Did a method that we expected to run actually run?
+Or did a method that we expected would not run, not run?
+In this case, we are testing code flow, not just if we get the right values out.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
