@@ -23,8 +23,12 @@ MyClass myClass = mock(MyClass.class);
 when(myClass.myMethod(params)).thenReturn(return-value));
 
 //verify(): equivalent of assert to see if this method was called would be the verify method. In this case, we don't care what the params was, we want to know how many times this method was called.
-// ? is a integer. If it is 1, it means that we are gonna see how many times this method was called with this params.
+// ? is an integer. If it is 1, it means that we are gonna see how many times this method was called with this params.
 Verify(myClass, time(?)).myMethod(params);
+
+We use Stubs and Mocks when we have some dependency that we need to override.
+
+Mock are used to check if objects are being used. It is used to test behaviour.
 
 
 
