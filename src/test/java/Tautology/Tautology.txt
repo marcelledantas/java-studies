@@ -1,0 +1,6 @@
+Tautology: it is a repetition of the test code on the code that we are testing.
+One of the ways to avoid tautologies: test shouldn't include any logic.
+The tests should be base on examples and expected outcome. You don't have to calculate anything in your test code. If it is, it means that the test isn't right,
+there's a great chance that the test won't work properly.
+
+We are doing tests based on TDD all the test should be based on examples where you know the expected outcome. You shouldn't calculate expected outcomes in a test.
