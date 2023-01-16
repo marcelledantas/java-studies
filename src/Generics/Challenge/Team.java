@@ -1,38 +1,20 @@
-package Generics;
+package Generics.Challenge;
 
-import java.util.ArrayList;
+public class Team<T> implements Comparable<Team>{
 
-public class Team<T extends Player> implements Comparable<Team>{
-    private String name;
     int played = 0;
     int won = 0;
     int lost = 0;
     int tied = 0;
 
-    private ArrayList<T> members = new ArrayList<>();
+    private String Name;
 
     public Team(String name) {
-        this.name = name;
+        Name = name;
     }
 
     public String getName() {
-        return name;
-    }
-
-    public boolean addPlayer(T player){
-        if(members.contains(player)){
-            System.out.println(((Player) player).getName() + " is already on this team");
-            return false;
-        }
-        else{
-            members.add(player);
-            System.out.println(((Player)player).getName() + " picked for team " + this.name);
-            return true;
-        }
-    }
-
-    public int numPlayer() {
-        return this.members.size();
+        return Name;
     }
 
     public void matchResult(Team<T> opponent, int ourScore, int theirScore){

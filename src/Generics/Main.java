@@ -9,12 +9,26 @@ public class Main {
         BaseballPlayer brady = new BaseballPlayer("Brady");
         SoccerPlayer xavier = new SoccerPlayer("Xavier");
 
-        Team adelaideCrows = new Team("Adelaide Crows");
-        adelaideCrows.addPlayer(joe);
-        adelaideCrows.addPlayer(brady);
-        adelaideCrows.addPlayer(xavier);
+        Team<FootballPlayer> adelaideCrows = new Team<>("Adelaide Crows");
+        Team<FootballPlayer> adelaideBulls = new Team<>("Adelaide Crows");
 
+        adelaideBulls.addPlayer(joe);
+
+        adelaideCrows.addPlayer(joe);
         System.out.println(adelaideCrows.numPlayer());
+
+        Team<BaseballPlayer> baseballTeam = new Team<>("Chicago Bulls");
+        baseballTeam.addPlayer(brady);
+
+        adelaideCrows.matchResult(adelaideBulls, 1,0);
+        System.out.println("Rankings");
+
+        System.out.println(adelaideCrows.getName() + ": " + adelaideCrows.ranking());
+        System.out.println(adelaideCrows.compareTo(adelaideBulls));
+
+
+//        Team<String> brokenTeam = new Team<>("wont work");
+//        brokenTeam.addPlayer("no one");
 
 //        adelaideCrows.matchResult(teamOpponent, 1,0);
 //        adelaideCrows.matchResult(teamOpponent, 2,2);

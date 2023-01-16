@@ -1,8 +1,8 @@
-package Generics;
+package Generics.Final;
 
 import java.util.ArrayList;
 
-public class Team<T extends Player> implements Comparable<Team>{
+public class Team<T> implements Comparable<Team>{
     private String name;
     int played = 0;
     int won = 0;
