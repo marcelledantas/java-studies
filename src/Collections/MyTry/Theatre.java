@@ -7,7 +7,7 @@ import java.util.List;
 public class Theatre {
     private final String name;
     private String numSeats;
-    private List<Seat> seats = new ArrayList<>();
+    public List<Seat> seats = new ArrayList<>();
 
     public Theatre(String name, int numberOfRows, int numberSeatsPerRow) {
         this.name = name;
@@ -98,7 +98,7 @@ public class Theatre {
 //        }
     }
 
-    private class Seat implements Comparable<Seat>{
+    public class Seat implements Comparable<Seat>{
         private String seatNumber;
         private boolean reserved = false;
 
