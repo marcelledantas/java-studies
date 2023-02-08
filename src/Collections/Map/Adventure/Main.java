@@ -40,38 +40,59 @@ public class Main {
 
 
         int loc = 1;
-//        while(true){
-//            System.out.println(locations.get(loc).getDescription());
-//            if(loc == 0){
-//                break;
-//            }
-//
-//            Map<String, Integer> exists = locations.get(loc).getExists();
-//            System.out.println("Available exists are ");
-//            for(String exit: exists.keySet()){
-//                System.out.print(exit + ", ");
-//            }
-//            System.out.println();
-//
-//            String directions = scanner.nextLine().toUpperCase();
-//            if(exists.containsKey(directions)){
-//                loc = exists.get(directions);
-//            } else{
-//                System.out.println("You cannot go in that direction");
-//            }
-//        }
+        while(true){
+            System.out.println(locations.get(loc).getDescription());
+            if(loc == 0){
+                break;
+            }
 
-        String[] road = "You are standing at the end of a road before a small brick building".split(" ");
-        for(String i : road){
-            System.out.println(i);
+            Map<String, Integer> exists = locations.get(loc).getExists();
+            System.out.println("Available exists are ");
+            for(String exit: exists.keySet()){
+                System.out.print(exit + ", ");
+            }
+            System.out.println();
+
+            String direction = scanner.nextLine().toUpperCase().split(" ")[1];;
+
+                switch (direction){
+                    case "EAST":
+                        direction = "E";
+                        break;
+                    case "WEST":
+                        direction = "W";
+                        break;
+                    case "NORTH":
+                        direction = "N";
+                        break;
+                    case "SOUTH":
+                        direction = "S";
+                        break;
+                }
+
+
+
+            if(exists.containsKey(direction)){
+                loc = exists.get(direction);
+            } else{
+                System.out.println("You cannot go in that direction");
+            }
         }
 
-        System.out.println("===============================");
 
-        String[] building = "You are standing inside a building, a well house for a small spring".split(", ");
-        for(String i : building){
-            System.out.println(i);
-        }
 
     }
 }
+
+
+//    String[] road = "You are standing at the end of a road before a small brick building".split(" ");
+//        for(String i : road){
+//                System.out.println(i);
+//                }
+//
+//                System.out.println("===============================");
+//
+//                String[] building = "You are standing inside a building, a well house for a small spring".split(", ");
+//                for(String i : building){
+//                System.out.println(i);
+//                }
