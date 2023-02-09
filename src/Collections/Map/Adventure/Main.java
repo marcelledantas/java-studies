@@ -37,6 +37,11 @@ public class Main {
         locations.get(5).addExit("W", 2);
 //        locations.get(5).addExit("Q", 0);
 
+        Map<String, String> vocabulary = new HashMap<>();
+        vocabulary.put("NORTH", "N");
+        vocabulary.put("SOUTH", "S");
+        vocabulary.put("EAST", "E");
+        vocabulary.put("WEST", "W");
 
 
         int loc = 1;
@@ -53,24 +58,17 @@ public class Main {
             }
             System.out.println();
 
-            String direction = scanner.nextLine().toUpperCase().split(" ")[1];;
+            String direction = scanner.nextLine().toUpperCase();
 
-                switch (direction){
-                    case "EAST":
-                        direction = "E";
+            if(direction.length() > 1){
+                String[] words= direction.split(" ");
+                for(String word: words){
+                    if(vocabulary.containsKey(word)){
+                        direction = vocabulary.get(word);
                         break;
-                    case "WEST":
-                        direction = "W";
-                        break;
-                    case "NORTH":
-                        direction = "N";
-                        break;
-                    case "SOUTH":
-                        direction = "S";
-                        break;
+                    }
                 }
-
-
+            }
 
             if(exists.containsKey(direction)){
                 loc = exists.get(direction);
@@ -78,9 +76,6 @@ public class Main {
                 System.out.println("You cannot go in that direction");
             }
         }
-
-
-
     }
 }
 
